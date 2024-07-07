@@ -28,7 +28,7 @@ This Python project allows you to generate emails using browser automation. It s
    python run.py
    ```
 
-   Follow the on-screen instructions to input captchas when prompted.
+   Follow the on-screen instructions to input captchas when prompted. Also, chromedriver should pe available in the system PATH.
 
 ## Future Work
 
