@@ -1,0 +1,9 @@
+selenium
+requests
+selenium-stealth
+random-password-generator
+Faker
+lxml
+fake-headers
+pillow
+playwright
