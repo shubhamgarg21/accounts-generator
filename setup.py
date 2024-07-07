@@ -5,6 +5,7 @@ setup(
     version='0.1.0',
     author='Shubham Garg',
     author_email='shubham.garg21@outlook.com',
+    license='GPLv3',
     packages=find_packages(),
     install_requires=[
         'selenium',
