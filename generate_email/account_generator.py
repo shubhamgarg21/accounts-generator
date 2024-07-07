@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from datetime import datetime
 import time, os, json, random, uuid
 
 
@@ -159,6 +160,8 @@ class AccountGenerator:
         next_button.click()
 
         dob = data['birth_date']
+        if isinstance(dob, str):
+            dob = datetime.strptime(dob, '%Y-%m-%d').date()
         # Wait until the birth month dropdown is available
         birth_month_select = wait.until(EC.presence_of_element_located((By.ID, ID_BIRTH_MONTH)))
         # Select a month from the dropdown
