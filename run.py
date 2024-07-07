@@ -24,5 +24,5 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    data = read_json_file(args.json)
+    data = read_json_file(args.json) if args.json else None
     generate_email(data)
