@@ -26,9 +26,13 @@ ID_ACCEPT_BUTTON = 'acceptButton'
 
 
 class AccountGenerator:
-    def __init__(self, wait_time=2):
-        self.proxy_generator = ProxyGenerator()
-        self.user_agent_handler = UserAgentHandler()
+    def __init__(self, wait_time=2, use_proxy=True, use_user_agent=True):
+        self.proxy_generator = None
+        self.user_agent_handler = None
+        if use_proxy:
+            self.proxy_generator = ProxyGenerator()
+        if use_user_agent:
+            self.user_agent_handler = UserAgentHandler()
         self.driver = None
         self.wait_time = wait_time
         self.sleep_time = 2
@@ -59,8 +63,9 @@ class AccountGenerator:
     def start_driver(self):
         if self.driver:
             self.close_driver()
-        self.driver = ChromeDriver(proxy=self.proxy_generator.get_valid_proxy(),
-                                   user_agent=self.user_agent_handler.get_user_agent()).prepare_driver()
+        proxy = self.proxy_generator.get_valid_proxy() if self.proxy_generator else None
+        user_agent = self.user_agent_handler.get_user_agent() if self.user_agent_handler else None
+        self.driver = ChromeDriver(proxy=proxy, user_agent=user_agent).prepare_driver()
     
     def close_driver(self):
         if self.driver:
