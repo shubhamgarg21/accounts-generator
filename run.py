@@ -22,7 +22,10 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-if __name__ == "__main__":
+def main():
     args = parse_args()
     data = read_json_file(args.json) if args.json else None
     generate_email(data)
+
+if __name__ == "__main__":
+    main()
