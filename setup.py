@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='generate-email',
-    version='0.1.1',
+    version='0.1.0',
     author='Shubham Garg',
     author_email='shubham.garg21@outlook.com',
     packages=find_packages(),
