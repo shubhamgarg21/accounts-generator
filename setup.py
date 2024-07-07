@@ -7,6 +7,8 @@ setup(
     author_email='shubham.garg21@outlook.com',
     license='GPLv3',
     packages=find_packages(),
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     install_requires=[
         'selenium',
         'playwright',
