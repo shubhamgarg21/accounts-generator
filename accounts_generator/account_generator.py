@@ -3,12 +3,13 @@ from .user_agent_handler import UserAgentHandler
 from .chrome_driver import ChromeDriver
 
 from PIL import Image
+from abc import ABC, abstractmethod
 from selenium.webdriver.remote.webelement import WebElement
 
 import time, os, json, random
 
 
-class AccountGenerator:
+class AccountGenerator(ABC):
     def __init__(self, wait_time=2, use_proxy=True, use_user_agent=True):
         self.proxy_generator = None
         self.user_agent_handler = None
@@ -57,6 +58,10 @@ class AccountGenerator:
         for character in text:
             element.send_keys(character)
             time.sleep(random.uniform(.07, .15))
+    
+    @abstractmethod
+    def create_account(self, data=None):
+        pass
 
     def save_account_details(self, account_details, file='generated.json'):
         # Convert the dictionary to JSON format
