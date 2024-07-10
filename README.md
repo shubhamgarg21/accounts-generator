@@ -1,13 +1,13 @@
-# Email Generator with Browser Automation
+# Account Generator with Browser Automation
 
-This Python project allows you to generate emails using browser automation. It supports integrated proxy rotation, User-Agent rotation, and checks if an email is already in use. Captchas must be solved manually during email generation, as they cannot be effectively solved by any library present currently.
+This Python project allows you to generate accounts using browser automation. It supports integrated proxy rotation, User-Agent rotation, and checks if an account is already in use. Captchas must be solved manually during account generation, as they cannot be effectively solved by any library present currently.
 
 ## Features
 
-- **Browser Automation**: Automates the process of email generation using a web browser.
+- **Browser Automation**: Automates the process of account generation using a web browser.
 - **Proxy Rotation**: Integrated support for rotating proxies to change IP addresses.
 - **User-Agent Rotation**: Rotates User-Agent headers to simulate different browsers and devices.
-- **Duplicate Email Check**: Checks if an email address is already registered.
+- **Duplicate Email Check**: Checks if an account is already registered.
 
 ## Usage
 
@@ -16,7 +16,7 @@ This Python project allows you to generate emails using browser automation. It s
    ```bash
    # Clone the repository
    git clone <repository-url>
-   cd generate-email
+   cd account-generator
 
    # Install dependencies
    pip install -r requirements.txt
